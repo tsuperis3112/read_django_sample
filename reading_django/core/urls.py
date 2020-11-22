@@ -16,8 +16,10 @@ Including another URLconf
 from django.urls import path
 
 from hoge import views as hoge_views
+from form_sample import views as form_sample_views
 
 urlpatterns = [
-    path('func/', hoge_views.function_based_view, name='hoge'),
-    path('cls/', hoge_views.ClassBasedView.as_view(), name='hoge'),
+    path('func/', hoge_views.function_based_view, name='hoge_func'),
+    path('cls/', hoge_views.ClassBasedView.as_view(), name='hoge_cls'),
+    path('form_sample/', form_sample_views.MyFormView.as_view(), name='form_sample'),
 ]
