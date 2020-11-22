@@ -13,13 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
+from django.urls import include, path
 
 from hoge import views as hoge_views
-from form_sample import views as form_sample_views
 
 urlpatterns = [
     path('func/', hoge_views.function_based_view, name='hoge_func'),
     path('cls/', hoge_views.ClassBasedView.as_view(), name='hoge_cls'),
-    path('form_sample/', form_sample_views.MyFormView.as_view(), name='form_sample'),
+    path('form_sample/', include('form_sample.urls')),
 ]

@@ -8,7 +8,7 @@ from form_sample.forms import MyForm
 class MyFormView(FormView):
     """FormViewサンプル"""
     form_class = MyForm
-    success_url = reverse_lazy('form_sample')
+    success_url = reverse_lazy('form_sample:index')
     template_name = 'form_sample/form_sample.html'
 
     def form_valid(self, form):
